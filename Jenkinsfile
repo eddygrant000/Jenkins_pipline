@@ -38,10 +38,5 @@ pipeline{
                 waitForQualityGate abortPipeline: true
             }
         }
-        stage('Fetch_Infra_Code') {
-        steps {
-          sh 'echo hello done'
-        }
-      }
     }
 }
