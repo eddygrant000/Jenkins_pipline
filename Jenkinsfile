@@ -38,10 +38,16 @@ pipeline{
                 waitForQualityGate abortPipeline: true
             }
         }
-    }
-    post{
-        success{
-            build job: 'CD'
+         stage('CI Done') {
+        steps {
+          sh 'echo hello done'
         }
+      }
     }
+
+    // post{
+    //     success{
+    //         build job: 'CD'
+    //     }
+    // }
 }
