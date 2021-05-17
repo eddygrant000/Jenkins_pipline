@@ -33,21 +33,21 @@ pipeline{
                 }
             }
         }
-        stage("Quality gate") {
-            steps {
-                waitForQualityGate abortPipeline: true
-            }
-        }
-         stage('CI Done') {
-        steps {
-          sh 'echo hello done'
-        }
-      }
+    //     stage("Quality gate") {
+    //         steps {
+    //             waitForQualityGate abortPipeline: true
+    //         }
+    //     }
+    //      stage('CI Done') {
+    //     steps {
+    //       sh 'echo hello done'
+    //     }
+    //   }
     }
 
-    // post{
-    //     success{
-    //         build job: 'CD'
-    //     }
-    // }
+    post{
+        success{
+            build job: 'CD'
+        }
+    }
 }
